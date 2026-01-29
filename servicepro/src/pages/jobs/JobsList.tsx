@@ -3,8 +3,3 @@
 
 // For more information about configuring ESLint, visit https://eslint.org/docs/user-guide/configuring/
 
-module.exports = [
-    {
-        rules: {}
-    }
-];

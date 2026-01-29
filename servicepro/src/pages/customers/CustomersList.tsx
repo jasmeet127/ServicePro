@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { getCustomers } from "../../services/customerService";
-
-
-export default function CustomersList() {
-    return <h2>Customers Page</h2>;
-}
+import type { CustomerDto } from "../../models/CustomerDto";
 
 export default function CustomersList() {
-    const [customers, setCustomers] = useState([]);
+    const [customers, setCustomers] = useState<CustomerDto[]>([]);
 
     useEffect(() => {
         getCustomers().then(res => {
@@ -18,6 +14,7 @@ export default function CustomersList() {
     return (
         <div>
             <h2>Customers</h2>
+
             {customers.map(c => (
                 <div key={c.id}>{c.name}</div>
             ))}
